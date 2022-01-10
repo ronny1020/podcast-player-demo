@@ -1,0 +1,154 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "vue/setup-compiler-macros": true
+  },
+  "extends": [
+    "plugin:vue/vue3-recommended",
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "@vue/typescript/recommended",
+    "@vue/prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["vue", "@typescript-eslint"],
+  "rules": {
+    "import/no-cycle": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["vite.config.ts"]
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        },
+        "groups": [
+          "external",
+          "builtin",
+          "index",
+          "sibling",
+          "parent",
+          "internal",
+          "object",
+          "type"
+        ],
+        "newlines-between": "never",
+        "pathGroups": [
+          {
+            "group": "external",
+            "pattern": "vue",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["vue"]
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "no-void": [
+      "error",
+      {
+        "allowAsStatement": true
+      }
+    ],
+    "vue/block-lang": [
+      "error",
+      {
+        "script": {
+          "lang": "ts"
+        }
+      }
+    ],
+    "vue/html-closing-bracket-newline": [
+      "error",
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
+    "vue/html-self-closing": [
+      "error",
+      {
+        "html": {
+          "component": "always",
+          "normal": "always",
+          "void": "always"
+        },
+        "math": "always",
+        "svg": "always"
+      }
+    ],
+    "vue/new-line-between-multi-line-property": "error",
+    "vue/no-duplicate-attr-inheritance": "error",
+    "vue/no-multiple-objects-in-class": "error",
+    "vue/no-parsing-error": [
+      2,
+      {
+        "invalid-first-character-of-tag-name": false
+      }
+    ],
+    "vue/no-potential-component-option-typo": "error",
+    "vue/no-template-target-blank": "error",
+    "vue/no-unregistered-components": "error",
+    "vue/no-unused-properties": [
+      "warn",
+      {
+        "groups": ["props", "data", "computed", "methods", "setup"]
+      }
+    ],
+    "vue/no-unused-refs": "error",
+    "vue/no-useless-v-bind": "error",
+    "vue/padding-line-between-blocks": "error",
+    "vue/script-setup-uses-vars": "error",
+    "vue/v-for-delimiter-style": ["error", "of"],
+    "vue/v-on-function-call": [
+      "error",
+      "never",
+      {
+        "ignoreIncludesComment": false
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/__tests__/*.{j,t}s?(x)",
+        "**/tests/unit/**/*.spec.{j,t}s?(x)"
+      ],
+      "env": {
+        "jest": true
+      }
+    },
+    {
+      "files": ["*.html"],
+      "processor": "vue/.vue"
+    }
+  ],
+  "ignorePatterns": ["index.html", "**/*.png", "**/*.scss"],
+  "settings": {
+    "import/extensions": [".js", ".ts"],
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".ts"]
+      },
+      "alias": {
+        "map": [["@", "./src"]],
+        "extensions": [".js", ".ts"]
+      }
+    }
+  }
+}
