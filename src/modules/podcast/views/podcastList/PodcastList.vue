@@ -1,8 +1,8 @@
 <template>
   <router-link
     v-for="episode of episodesToRender"
-    :key="episode.guid"
-    :to="`/episode/${episode.guid}`"
+    :key="episode.guid['#text']"
+    :to="`/episode/${episode.guid['#text']}`"
   >
     <EpisodeItem :episode="episode" :channel-image-url="channelImageUrl" />
   </router-link>

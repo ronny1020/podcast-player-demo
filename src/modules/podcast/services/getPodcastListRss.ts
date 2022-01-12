@@ -1,7 +1,9 @@
 import { XMLParser } from 'fast-xml-parser'
 import { RSS } from '../models/rss'
 
-const parser = new XMLParser()
+const parser = new XMLParser({
+  ignoreAttributes: false,
+})
 
 export default async function getPodcastListRss(): Promise<RSS> {
   const response = await fetch(

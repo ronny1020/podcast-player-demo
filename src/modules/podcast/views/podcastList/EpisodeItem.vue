@@ -2,7 +2,7 @@
   <div class="wrapper">
     <Image
       :width="100"
-      :src="episode?.['itunes:image'] || channelImageUrl"
+      :src="episode?.['itunes:image']['@_href'] || channelImageUrl"
       alt="channel image"
     />
     <div class="content">
