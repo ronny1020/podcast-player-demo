@@ -17,6 +17,7 @@ specifiers:
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-prettier-vue: ^3.1.0
   eslint-plugin-vue: ^8.2.0
+  fast-xml-parser: ^4.0.1
   husky: ^7.0.0
   lint-staged: ^12.1.5
   postcss: ^8.4.5
@@ -44,6 +45,7 @@ specifiers:
 
 dependencies:
   ant-design-vue: 2.2.8_vue@3.2.26
+  fast-xml-parser: 4.0.1
   vue: 3.2.26
   vue-router: 4.0.12_vue@3.2.26
 
@@ -1674,6 +1676,13 @@ packages:
     resolution: {integrity: sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=}
     dev: true
 
+  /fast-xml-parser/4.0.1:
+    resolution: {integrity: sha512-EN1yOXDmMqpHrqkwTlCJDvFjepJBoBxjLRDtDxFmqrBILGV3NyFWpmcsofSKCCzc+YxhvNreB5rcKzG+TlyWpg==}
+    hasBin: true
+    dependencies:
+      strnum: 1.0.5
+    dev: false
+
   /fastest-levenshtein/1.0.12:
     resolution: {integrity: sha512-On2N+BpYJ15xIC974QNVuYGMOlEVt4s0EOI3wwMqOmK1fdDY+FN/zltPV8vosq4ad4c/gJ1KHScUn/6AWIgiow==}
     dev: true
@@ -3213,6 +3222,10 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
     dev: true
+
+  /strnum/1.0.5:
+    resolution: {integrity: sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==}
+    dev: false
 
   /style-search/0.1.0:
     resolution: {integrity: sha1-eVjHk+R+MuB9K1yv5cC/jhLneQI=}
