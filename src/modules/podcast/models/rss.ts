@@ -31,7 +31,7 @@ export interface Channel {
   'itunes:subtitle': string
   'itunes:category': string
   'itunes:new-feed-url': string
-  item: Item[]
+  item: EpisodeItem[]
 }
 
 export interface Image {
@@ -40,7 +40,7 @@ export interface Image {
   link: string
 }
 
-export interface Item {
+export interface EpisodeItem {
   title: string
   description: string
   link: string
