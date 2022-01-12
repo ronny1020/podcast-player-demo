@@ -13,5 +13,6 @@ import PodcastHeader from './PodcastHeader.vue'
 .container {
   max-width: 1200px;
   margin: 1rem auto;
+  padding: 0 0 1rem;
 }
 </style>
