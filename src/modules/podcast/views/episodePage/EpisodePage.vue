@@ -4,10 +4,12 @@
     class="description"
     v-html="currentEpisode['content:encoded']"
   />
+  <CustomPlayer :audio-url="currentEpisode?.enclosure['@_url'] || ''" />
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import CustomPlayer from './CustomPlayer.vue'
 import findEpisodeByGuid from '../../domain/findEpisodeByGuid'
 import usePodcastListStore from '../../store/podcastListStore'
 import router from '@/router'
