@@ -1,10 +1,11 @@
 <template>
-  <EpisodeItem
+  <router-link
     v-for="episode of episodes"
     :key="episode.guid"
-    :episode="episode"
-    :channel-image-url="channelImageUrl"
-  />
+    :to="`/episode/${episode.guid}`"
+  >
+    <EpisodeItem :episode="episode" :channel-image-url="channelImageUrl" />
+  </router-link>
 </template>
 
 <script setup lang="ts">

@@ -6,6 +6,11 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/modules/podcast/views/PodcastHome.vue'),
     children: [
       {
+        path: '/episode/:guid',
+        component: () =>
+          import('@/modules/podcast/views/episodePage/EpisodePage.vue'),
+      },
+      {
         path: '/',
         component: () =>
           import('@/modules/podcast/views/podcastList/PodcastList.vue'),
