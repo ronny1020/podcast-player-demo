@@ -2,7 +2,10 @@
   <Skeleton v-if="!channel" active />
   <header v-else>
     <Image :width="300" :src="channel?.image.url" alt="channel image" />
-    <h1>{{ channel?.title }}</h1>
+    <div class="content">
+      <h1>{{ channel?.title }}</h1>
+      <p>{{ channel?.description }}</p>
+    </div>
   </header>
 </template>
 
@@ -24,9 +27,9 @@ header {
   border-radius: 0.25rem;
   background: #1d1d1d;
 
-  h1 {
+  .content {
     align-self: end;
-    margin-left: 3rem;
+    margin: 1rem;
   }
 }
 </style>
