@@ -1,7 +1,9 @@
-import getPodcastList from '../services/getPodcastList'
+import getPodcastListRss from '../services/getPodcastListRss'
+import usePodcastListStore from '../store/podcastListStore'
 
 export default async function updatePodcastList() {
-  const podcastList = await getPodcastList()
+  const podcastListRss = await getPodcastListRss()
 
-  console.log(podcastList)
+  const podcastListStore = usePodcastListStore()
+  podcastListStore.setRss(podcastListRss)
 }

@@ -3,7 +3,7 @@ import { RSS } from '../models/rss'
 
 const parser = new XMLParser()
 
-export default async function getPodcastListJson(): Promise<RSS> {
+export default async function getPodcastListRss(): Promise<RSS> {
   const response = await fetch(
     `${
       import.meta.env.VITE_DOMAIN

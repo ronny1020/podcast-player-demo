@@ -1,12 +1,9 @@
-<template>a</template>
+<template>{{ podcastListStore.rss }}</template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
-import updatePodcastList from '../../application/updatePodcastList'
+import usePodcastListStore from '../../store/podcastListStore'
 
-onMounted(() => {
-  void updatePodcastList()
-})
+const podcastListStore = usePodcastListStore()
 </script>
 
 <style lang="scss">
