@@ -13,4 +13,5 @@ onMounted(() => {
 
 <style lang="scss">
 @import '@/styles';
+@import 'ant-design-vue/dist/antd.dark.css';
 </style>
