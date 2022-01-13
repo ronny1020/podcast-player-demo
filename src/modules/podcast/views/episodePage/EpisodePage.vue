@@ -4,6 +4,9 @@
     class="description"
     v-html="currentEpisode['content:encoded']"
   />
+
+  <div class="player-space" />
+
   <CustomPlayer :audio-url="currentEpisode?.enclosure['@_url'] || ''" />
 </template>
 
@@ -31,5 +34,9 @@ const currentEpisode = computed(() =>
   padding: 1rem;
   border-radius: 0.25rem;
   background: #1d1d1d;
+}
+
+.player-space {
+  height: 100px;
 }
 </style>

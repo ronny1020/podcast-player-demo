@@ -107,7 +107,7 @@
     "vue/no-unused-properties": [
       "warn",
       {
-        "groups": ["props", "data", "computed", "methods", "setup"]
+        "groups": ["data", "computed", "methods", "setup"]
       }
     ],
     "vue/no-unused-refs": "error",
