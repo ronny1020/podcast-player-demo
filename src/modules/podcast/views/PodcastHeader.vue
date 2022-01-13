@@ -3,7 +3,7 @@
 
   <div v-else class="header-wrapper">
     <div class="back-icon">
-      <router-link v-if="!atHomePage" to="/">
+      <router-link v-show="!atHomePage" to="/">
         <ArrowLeftOutlined />
       </router-link>
     </div>
