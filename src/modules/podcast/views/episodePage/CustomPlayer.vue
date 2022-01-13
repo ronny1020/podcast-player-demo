@@ -1,5 +1,5 @@
 <template>
-  <div class="player-wrapper">
+  <div class="player-wrapper" :class="{ hide: isHidden }">
     <Slider
       :value="currentTime"
       :max="audio.duration"
@@ -41,6 +41,7 @@ import formateSecondsNumber from '@/shared/utils/formateSecondsNumber'
 
 interface Props {
   audioUrl: string
+  isHidden: boolean
 }
 
 const props = defineProps<Props>()
@@ -90,6 +91,11 @@ onUnmounted(() => {
   width: 100%;
   padding: 1rem 3rem;
   background: rgb(14 14 14);
+  transition: all 0.3s;
+
+  &.hide {
+    transform: translateY(100%);
+  }
 
   .button-group {
     display: flex;
