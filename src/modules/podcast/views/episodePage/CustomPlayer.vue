@@ -8,7 +8,7 @@
     />
 
     <div class="button-group">
-      <Button type="text" shape="circle">
+      <Button type="text" shape="circle" @click="toPrevAudio">
         <StepBackwardOutlined />
       </Button>
 
@@ -20,7 +20,7 @@
         <CaretRightOutlined />
       </Button>
 
-      <Button type="text" shape="circle">
+      <Button type="text" shape="circle" @click="toNextAudio">
         <StepForwardOutlined />
       </Button>
     </div>
@@ -45,6 +45,19 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+
+const emit = defineEmits<{
+  (e: 'toNextAudio'): void
+  (e: 'toPrevAudio'): void
+}>()
+
+function toNextAudio() {
+  emit('toNextAudio')
+}
+
+function toPrevAudio() {
+  emit('toPrevAudio')
+}
 
 const currentTime = ref(0)
 
@@ -72,6 +85,7 @@ onMounted(() => {
   audio.addEventListener('timeupdate', timeupdateListener)
   audio.addEventListener('play', playListeners)
   audio.addEventListener('pause', pauseListeners)
+  audio.addEventListener('ended', toNextAudio)
 })
 
 onUnmounted(() => {
@@ -80,6 +94,7 @@ onUnmounted(() => {
   audio.removeEventListener('timeupdate', timeupdateListener)
   audio.removeEventListener('play', playListeners)
   audio.removeEventListener('pause', pauseListeners)
+  audio.removeEventListener('ended', toNextAudio)
 })
 </script>
 
